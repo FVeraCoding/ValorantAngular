@@ -5,9 +5,8 @@
     "module": "esnext",
     "target": "es2022",
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "moduleDetection": "force",
-    "types": []
+    "types": [],
+    "noEmitHelpers": true
   },
   "files": ["src/main.server.ts"]
 }
