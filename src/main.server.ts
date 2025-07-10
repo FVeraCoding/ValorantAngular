@@ -6,3 +6,5 @@ const commonEngine = new CommonEngine();
 export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
   return await render(commonEngine);
 }
+
+export default netlifyCommonEngineHandler;
