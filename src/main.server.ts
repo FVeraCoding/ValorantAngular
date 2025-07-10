@@ -1,7 +1,5 @@
 import { CommonEngine } from '@angular/ssr/node';
-
 // @ts-ignore
-
 import { render } from '@netlify/angular-runtime/common-engine';
 
 const commonEngine = new CommonEngine();
