@@ -11,6 +11,7 @@
     "serve:ssr:proyecto_frontend": "node dist/proyecto_frontend/server/server.mjs"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
@@ -31,7 +32,7 @@
     "@angular-devkit/build-angular": "^19.2.3",
     "@angular/cli": "^19.2.3",
     "@angular/compiler-cli": "^19.2.0",
-    "@netlify/angular-runtime": "^2.2.0",
+    "@netlify/angular-runtime": "^2.4.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/jwt-decode": "^3.1.0",

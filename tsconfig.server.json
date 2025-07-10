@@ -3,6 +3,10 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc/server",
     "module": "esnext",
+    "target": "es2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "moduleDetection": "force",
     "types": []
   },
   "files": ["src/main.server.ts"]
