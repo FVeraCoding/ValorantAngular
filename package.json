@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng build && ng run proyecto_frontend:server && cp src/index.html dist/proyecto_frontend/server/index.server.html && mv dist/proyecto_frontend/server/main.mjs dist/proyecto_frontend/server/server.mjs",
+    "build:ssr": "ng build && ng run proyecto_frontend:server && cp src/index.html dist/proyecto_frontend/server/index.server.html && mv dist/proyecto_frontend/server/main.js dist/proyecto_frontend/server/server.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:proyecto_frontend": "node dist/proyecto_frontend/server/server.mjs"
