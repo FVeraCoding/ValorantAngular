@@ -1,0 +1,38 @@
+<app-valorant-header></app-valorant-header>
+
+<div class="weapon-details-page" *ngIf="weapon">
+  <a routerLink="/valorant/weapons" class="back-link">← Volver a Armas</a>
+
+  <div class="weapon-main-info">
+    <div class="weapon-card">
+      <img [src]="weapon.displayIcon" [alt]="weapon.displayName" />
+      <h2>{{ weapon.displayName }}</h2>
+      <p>{{ weapon.shopData?.categoryText }}</p>
+      <div class="cost-badge" *ngIf="weapon.shopData?.cost > 0">{{ weapon.shopData.cost }}$</div>
+      <div class="cost-badge free" *ngIf="weapon.shopData?.cost === 0">GRATIS</div>
+    </div>
+
+    <div class="weapon-stats">
+      <h3>Características</h3>
+      <div class="stats-grid">
+        <div>Cadencia de disparo: <strong>{{ weapon.weaponStats?.fireRate }}</strong></div>
+        <div>Cargador: <strong>{{ weapon.weaponStats?.magazineSize }}</strong></div>
+        <div>Tiempo de recarga: <strong>{{ weapon.weaponStats?.reloadTimeSeconds }}s</strong></div>
+        <div>Tiempo de equipamiento: <strong>{{ weapon.weaponStats?.equipTimeSeconds }}s</strong></div>
+        <div>Precisión primera bala: <strong>{{ weapon.weaponStats?.firstBulletAccuracy }}%</strong></div>
+      </div>
+    </div>
+  
+    <div class="weapon-damage">
+      <h3>Daño</h3>
+      <div class="damage-grid">
+        <div>Cabeza: <strong>{{ weapon.weaponStats?.damageRanges[0]?.headDamage }}</strong></div>
+        <div>Cuerpo: <strong>{{ weapon.weaponStats?.damageRanges[0]?.bodyDamage }}</strong></div>
+        <div>Piernas: <strong>{{ weapon.weaponStats?.damageRanges[0]?.legDamage }}</strong></div>
+      </div>
+      <p class="damage-note">Los valores de daño corresponden a corta distancia (0-30 metros).</p>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<app-valorant-header></app-valorant-header>
+
+<div class="map-details" *ngIf="map">
+  <!-- Enlace de vuelta -->
+  <a routerLink="/valorant/maps" class="back-link">← Volver a Mapas</a>
+
+  <!-- Imagen principal del mapa -->
+  <div class="main-image" *ngIf="map.splash">
+    <img [src]="map.splash" [alt]="map.displayName" />
+  </div>
+
+  <!-- Información general -->
+  <div class="info-section">
+    <div class="left-info">
+      <h2>{{ map.displayName }}</h2>
+      <p class="location">{{ map.coordinates || 'Ubicación desconocida' }}</p>
+
+      <!-- Key Features -->
+      <h4>Zonas importantes</h4>
+      <ng-container *ngIf="map.tacticalDescription; else noFeatures">
+        <ul *ngIf="map.tacticalDescription.includes('\n'); else singleLine">
+          <li *ngFor="let feature of map.tacticalDescription.split('\n')">
+            {{ feature }}
+          </li>
+        </ul>
+        <ng-template #singleLine>
+          <li>{{ map.tacticalDescription }}</li>
+        </ng-template>
+      </ng-container>
+      <ng-template #noFeatures>
+        <p class="empty-msg">No se encuentran zonas importantes en este mapa.</p>
+      </ng-template>
+    </div>
+
+    <!-- Minimap -->
+    <div class="minimap" *ngIf="map.displayIcon">
+      <h4>Minimapa</h4>
+      <img [src]="map.displayIcon" [alt]="map.displayName + ' minimap'" />
+    </div>
+  </div>
+</div>

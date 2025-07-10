@@ -1,0 +1,58 @@
+<app-valorant-header></app-valorant-header>
+
+<div class="weapons-page">
+
+  <!-- Search -->
+  <section class="filters">
+    <input
+      type="text"
+      placeholder="Buscar armas..."
+      class="search-input"
+      (input)="updateSearch($event)"
+    />
+
+    <!-- Category filters -->
+    <div class="category-filters">
+      <button
+        *ngFor="let category of categories"
+        class="filter-btn"
+        [class.active]="activeCategory === category"
+        (click)="setCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+  </section>
+
+  <!-- Weapon Cards -->
+  <section class="weapons-grid">
+    <div class="weapon-card" *ngFor="let weapon of filteredWeapons">
+      <div class="weapon-image">
+        <img [src]="weapon.displayIcon" [alt]="weapon.displayName" />
+      </div>
+      <div class="weapon-info">
+        <h3>{{ weapon.displayName }}
+          <span class="cost-badge" *ngIf="weapon.shopData?.cost > 0">
+            {{ weapon.shopData.cost }}$
+          </span>
+          <span class="cost-badge free" *ngIf="weapon.shopData?.cost === 0">FREE</span>
+        </h3>
+
+        <p class="category">{{ weapon.shopData?.categoryText }}</p>
+
+        <p class="stats-title">Características</p>
+        <div class="stats">
+          <span>Cadencia: {{ weapon.weaponStats?.fireRate || 'N/A' }}</span>
+          <span>Munición: {{ weapon.weaponStats?.magazineSize || 'N/A' }}</span>
+          <span>Daño: {{
+            weapon.weaponStats?.damageRanges?.[0]?.headDamage || 'N/A'
+          }}</span>
+        </div>
+
+        <button class="details-btn" [routerLink]="['/valorant/weapons', weapon.uuid]">
+          Ver detalles
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

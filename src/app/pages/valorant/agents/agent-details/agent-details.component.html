@@ -1,0 +1,37 @@
+<app-valorant-header></app-valorant-header>
+
+<div class="agent-details" *ngIf="agent">
+    <a routerLink="/valorant/agents" class="back-link">← Volver a Agentes</a>
+  
+    <div class="agent-container">
+      <!-- Imagen -->
+      <div class="agent-image">
+        <img [src]="agent.fullPortrait || agent.displayIcon" [alt]="agent.displayName" />
+      </div>
+  
+      <!-- Info -->
+      <div class="agent-info">
+        <h2>
+          {{ agent.displayName }}
+          <span class="role-badge" [ngClass]="agent.role?.displayName?.toLowerCase()">
+            {{ agent.role?.displayName }}
+          </span>
+        </h2>
+  
+        <h4>Biografía</h4>
+        <p>{{ agent.description }}</p>
+  
+        <h4>Habilidades</h4>
+        <div class="abilities-grid">
+          <div class="ability" *ngFor="let ab of agent.abilities">
+            <div class="ability-header">
+              <strong>{{ ab.displayName }}</strong>
+              <span class="slot" *ngIf="ab.slot !== 'Passive'">{{ getSlotName(ab.slot) }}</span>
+            </div>
+            <p>{{ ab.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

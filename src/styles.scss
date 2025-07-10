@@ -1,0 +1,26 @@
+:root {
+    /* 🎮 Tema Oscuro Valorant */
+    --valorant-dark-primary: #f52c3d;          /* Rojo principal (header, botones) */
+    --valorant-dark-bg: #181818;               /* Fondo principal */
+    --valorant-dark-surface: #27272A;          /* Elementos secundarios */
+    --valorant-dark-surface-alt: #3F3F46;      /* Elementos terciarios */
+    
+    --valorant-dark-text: #FFFFFF;             /* Texto principal */
+    --valorant-dark-text-muted: #A1A1AA;       /* Texto secundario */
+    --valorant-dark-text-subtle: #D4D4D8;      /* Texto terciario */
+  
+    --valorant-dark-footer: #0a0a0b;           /* Fondo del footer (ajustado desde #0g0g0B) */
+  }
+  
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* opcional, por si algo se desborda en horizontal */
+  }

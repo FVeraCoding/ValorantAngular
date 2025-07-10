@@ -1,0 +1,95 @@
+*{
+  font-family: 'sans-serif', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.maps-page {
+  width: 100%;
+    background-color: var(--valorant-dark-bg);
+    color: var(--valorant-dark-text);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .search-input {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--valorant-dark-surface);
+    color: white;
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+    
+  .maps-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  
+  .map-card {
+    max-height: 50rem;
+    max-width: 40rem;
+    background-color: var(--valorant-dark-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .map-image {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .map-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .map-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .map-info h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  
+  .map-info p {
+    color: var(--valorant-dark-text-subtle);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  .details-btn {
+    margin-top: 1rem;
+    background-color: var(--valorant-dark-primary);
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  

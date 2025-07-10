@@ -1,0 +1,134 @@
+*{
+  font-family: 'sans-serif', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.map-details {
+  background-color: var(--valorant-dark-bg);
+  color: var(--valorant-dark-text);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 30rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.info-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.left-info {
+  flex: 2;
+}
+
+.left-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: var(--valorant-dark-text-subtle);
+  margin-bottom: 1rem;
+}
+
+.left-info h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.left-info p,
+.left-info li {
+  color: var(--valorant-dark-text-subtle);
+  font-size: 0.95rem;
+}
+
+.left-info ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.minimap {
+  flex: 1;
+  background-color: var(--valorant-dark-surface);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.minimap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: block;
+  
+}
+
+.callouts-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.callouts,
+.tips {
+  flex: 1;
+  background-color: var(--valorant-dark-surface-alt);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.callout-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.callout strong {
+  color: white;
+  display: block;
+}
+
+.callout p {
+  color: var(--valorant-dark-text-subtle);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.tips ul {
+  padding-left: 1rem;
+}
+
+.tips li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--valorant-dark-text-subtle);
+}

@@ -1,0 +1,29 @@
+<app-valorant-header></app-valorant-header>
+
+<div class="maps-page">
+  <!-- Search -->
+  <section class="filters">
+    <input
+      type="text"
+      placeholder="Buscar mapas..."
+      class="search-input"
+      (input)="updateSearch($event)"
+    />
+    </section>
+
+  <!-- Map Cards -->
+  <section class="maps-grid">
+    <div class="map-card" *ngFor="let map of filteredMaps()">
+      <div class="map-image">
+        <img [src]="map.splash" [alt]="map.displayName" />
+      </div>
+      <div class="map-info">
+        <h3>{{ map.displayName }}</h3>
+        <p>{{ map.coordinates }}</p>
+        <p>{{ map.narrativeDescription }}</p>
+        <button class="details-btn" [routerLink]="['/valorant/maps', map.uuid]">View Map Details</button>
+      </div>
+    </div>
+  </section>
+  
+</div>

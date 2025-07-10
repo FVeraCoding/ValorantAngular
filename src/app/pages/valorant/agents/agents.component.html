@@ -1,0 +1,74 @@
+ 
+<app-valorant-header></app-valorant-header>
+
+<div class="agents-page">
+    <!-- Search -->
+    <section class="filters">
+      <input
+        type="text"
+        placeholder="Buscar agentes..."
+        class="search-input"
+        (input)="updateSearch($event)"
+      />
+  
+      <!-- Role filters -->
+      <div class="role-filters">
+        <button
+          class="filter-btn"
+          [class.active]="activeRole === 'Todos'"
+          (click)="setRole('Todos')"
+        >Todos</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeRole === 'Duelista'"
+          (click)="setRole('Duelista')"
+        >Duelista</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeRole === 'Iniciador'"
+          (click)="setRole('Iniciador')"
+        >Iniciador</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeRole === 'Controlador'"
+          (click)="setRole('Controlador')"
+        >Controlador</button>
+        <button
+          class="filter-btn"
+          [class.active]="activeRole === 'Centinela'"
+          (click)="setRole('Centinela')"
+        >Centinela</button>
+      </div>
+    </section>
+  
+    <!-- Agent Cards -->
+    <section class="agents-grid">
+      <div class="agent-card" *ngFor="let agent of filteredAgents">
+        <div class="agent-image">
+          <img [src]="agent.displayIcon" [alt]="agent.displayName" />
+        </div>
+        <div class="agent-info">
+          <h3>
+            {{ agent.displayName }}
+            <span
+              class="role-badge"
+              [ngClass]="agent.role?.displayName?.toLowerCase()"
+            >
+              {{ agent.role?.displayName }}
+            </span>
+          </h3>
+          <p class="abilities-title">Habilidades</p>
+          <div class="abilities">
+            <span *ngFor="let ability of agent.abilities">
+              {{ ability.displayName }}
+            </span>
+          </div>
+          <button class="details-btn" [routerLink]="['/valorant/agents', agent.uuid]">
+            Ver Detalles
+          </button>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+  
