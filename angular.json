@@ -112,7 +112,8 @@
           "options": {
             "outputPath": "dist/proyecto_frontend/server",
             "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "document": "src/index.server.html"
           },
           "configurations": {
             "production": {
